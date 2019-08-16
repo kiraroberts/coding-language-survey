@@ -19,16 +19,13 @@ $(document).ready(function() {
     console.log(output);
     if (output <= 5) {
       $('#python').show();
-      $('#ruby, #c, #no-match').hide();
+      $('#ruby, #c').hide();
     } else if (output <= 6) {
       $('#ruby').show();
-      $('#python, #c, #no-match').hide();
-    } else if (output <= 11) {
+      $('#python, #c').hide();
+    } else (output <= 11) {
       $('#c').show();
-      $('#ruby, #python, #no-match').hide();
-    } else {
-      $('#no-match').show();
-      $('#ruby, #python, #c').hide();
+      $('#ruby, #python').hide();
     }
 
     event.preventDefault();
