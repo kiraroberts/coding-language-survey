@@ -29,5 +29,6 @@ button {
 .panel-default {
   margin: 12px;
   padding: 4px;
+  border-radius: 15px;
   opacity: 0.88;
 }
