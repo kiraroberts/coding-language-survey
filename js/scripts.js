@@ -17,13 +17,14 @@ $(document).ready(function() {
 
     var output = surveyScore(inputQuestion1, inputQuestion2, inputQuestion3, inputQuestion4, inputQuestion5);
     console.log(output);
+
     if (output <= 5) {
       $('#python').show();
       $('#ruby, #c').hide();
-    } else if (output <= 6) {
+    } else if (output <= 10) {
       $('#ruby').show();
       $('#python, #c').hide();
-    } else (output <= 11) {
+    } else {
       $('#c').show();
       $('#ruby, #python').hide();
     }
