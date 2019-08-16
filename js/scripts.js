@@ -2,34 +2,34 @@
 
 var surveyScore = function(input1, input2, input3, input4, input5) {
   var score = input1 + input2 + input3 + input4 + input5;
-
-
-  if () {
-    $('#ruby').show();
-    $('#python, #c, #no-match').hide();
-  } else if () {
-    $('#python').show();
-    $('#ruby, #c, #no-match').hide();
-  } else if () {
-    $('#c').show();
-    $('#ruby, #python, #no-match').hide();
-  } else {
-    $('#no-match').show();
-    $('#ruby, #python, #c').hide();
-  }
-
+  return score;
 };
+
 // FRONT END
 
 $(document).ready(function() {
   $("form").submit(function(event) {
-    var inputQuestion1 = $("input:radio[name=experience]:checked").val();
-    var inputQuestion2 = $("input:radio[name=support]:checked").val();
-    var inputQuestion3 = $("input:radio[name=topic]:checked").val();
-    var inputQuestion4 = $("input:radio[name=balance]:checked").val();
-    var inputQuestion5 = $("input:radio[name=openSource]:checked").val();
+    var inputQuestion1 = parseInt($("input:radio[name=experience]:checked").val());
+    var inputQuestion2 = parseInt($("input:radio[name=support]:checked").val());
+    var inputQuestion3 = parseInt($("input:radio[name=topic]:checked").val());
+    var inputQuestion4 = parseInt($("input:radio[name=balance]:checked").val());
+    var inputQuestion5 = parseInt($("input:radio[name=openSource]:checked").val());
 
-    surveyScore(inputQuestion1, inputQuestion2, inputQuestion3, inputQuestion4, inputQuestion5);
+    var output = surveyScore(inputQuestion1, inputQuestion2, inputQuestion3, inputQuestion4, inputQuestion5);
+    console.log(output);
+    if (output <= 5) {
+      $('#python').show();
+      $('#ruby, #c, #no-match').hide();
+    } else if (output <= 6) {
+      $('#ruby').show();
+      $('#python, #c, #no-match').hide();
+    } else if (output <= 11) {
+      $('#c').show();
+      $('#ruby, #python, #no-match').hide();
+    } else {
+      $('#no-match').show();
+      $('#ruby, #python, #c').hide();
+    }
 
     event.preventDefault();
 
